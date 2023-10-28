@@ -1,7 +1,7 @@
 import express, { Application } from 'express'
 import cors from 'cors'
 import globalErrorHandler from './app/middleware/globalErrorHandler'
-import UserRoutes from './app/module/user/user.routes'
+import { Routes } from './routes'
 
 const app: Application = express()
 
@@ -11,11 +11,11 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 // routes
-app.use('/api/v1/user', UserRoutes)
+app.use('/api/v1', Routes)
 
 // test route
 app.get('/', (req, res) => {
-  res.send('SMS API SERVER IS RUNNING')
+    res.send('SMS API SERVER IS RUNNING')
 })
 
 // error handler

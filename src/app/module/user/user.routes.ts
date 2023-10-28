@@ -7,4 +7,4 @@ const router = express.Router()
 
 router.route('/').get().post(zodSchemaValidation(userZodSchemaValidation.userZodSchema), UserController.createUser)
 
-export default router
+export const UserRoutes = router
